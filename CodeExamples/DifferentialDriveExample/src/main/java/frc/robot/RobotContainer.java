@@ -50,7 +50,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return new MoveFeet(driveTrain, 9);
+    return new MoveFeet(driveTrain, 20);
   }
 
   public void teleOpPeriodic() {
