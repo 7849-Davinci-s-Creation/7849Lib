@@ -20,19 +20,3 @@ dependencies {
     implementation wpi.java.vendor.java()
 }
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-
-    test {
-        useJUnitPlatform()
-    }
-}
