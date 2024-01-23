@@ -20,3 +20,15 @@ dependencies {
     implementation wpi.java.vendor.java()
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.github.7849-Davinci-s-Creation'
+            artifactId = '7849Lib'
+            version = '1.0.1'
+
+            from components.java
+        }
+    }
+}
+
