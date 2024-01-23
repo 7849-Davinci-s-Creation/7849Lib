@@ -1,18 +1,18 @@
 plugins {
     id 'java'
     id "edu.wpi.first.GradleRIO" version "2022.2.1"
+    id 'maven-publish'
 }
-
-
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
-group 'io.github.7849-Davinci-s-Creation'
+group 'com.github.7849-Davinci-s-Creation'
 version '0.0.1'
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -20,6 +20,19 @@ dependencies {
     implementation wpi.java.vendor.java()
 }
 
-test {
-    useJUnitPlatform()
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
 }
