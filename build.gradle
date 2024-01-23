@@ -29,10 +29,6 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.github.7849-Davinci-s-Creation' as Publication
-            artifactId = '7849Lib' as Publication
-            version = '1.0.1' as Publication
-
             from components.java
         }
     }
