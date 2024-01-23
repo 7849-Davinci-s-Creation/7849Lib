@@ -4,6 +4,8 @@ plugins {
     id 'maven-publish'
 }
 
+apply plugin: 'maven-publish'
+
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
@@ -12,7 +14,6 @@ version '1.0.1'
 
 repositories {
     mavenCentral()
-    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -20,12 +21,17 @@ dependencies {
     implementation wpi.java.vendor.java()
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.github.7849-Davinci-s-Creation'
-            artifactId = '7849Lib'
-            version = '1.0.1'
+            groupId = 'com.github.7849-Davinci-s-Creation' as Publication
+            artifactId = '7849Lib' as Publication
+            version = '1.0.1' as Publication
 
             from components.java
         }
