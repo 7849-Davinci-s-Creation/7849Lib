@@ -27,3 +27,9 @@ replay_pid*
 /.idea/7849Lib.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
