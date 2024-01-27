@@ -10,7 +10,7 @@ sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
 group 'com.github.7849-Davinci-s-Creation'
-version '1.0.2'
+version '1.0.3'
 
 repositories {
     mavenCentral()
@@ -19,11 +19,17 @@ repositories {
 dependencies {
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
 
 java {
     withSourcesJar()
     withJavadocJar()
+}
+
+test {
+    useJUnitPlatform()
 }
 
 publishing {
