@@ -4,19 +4,19 @@ package lib.Math;
  * Code representation of a higher and lower bound.
  */
 public class Bounds {
-    private final int lowerBound;
-    private final int higherBound;
+    private final double lowerBound;
+    private final double higherBound;
 
-    public Bounds(int lowerBound, int higherBound) {
+    public Bounds(double lowerBound, double higherBound) {
         this.lowerBound = lowerBound;
         this.higherBound = higherBound;
     }
 
-    public int getHigherBound() {
+    public double getHigherBound() {
         return higherBound;
     }
 
-    public int getLowerBound() {
+    public double getLowerBound() {
         return lowerBound;
     }
 }
