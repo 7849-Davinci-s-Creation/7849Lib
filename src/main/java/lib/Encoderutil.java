@@ -33,13 +33,13 @@ public final class Encoderutil {
     }
 
     /**
-     * Creates a linear distance conversion factor for a neo encoder based upon gear ratio and wheel radius
+     * Creates a linear distance conversion factor for a neo encoder based upon gear ratio and wheel radius. <br>
+     * NOTE THIS IS IN METERS!
      * @param gearRatio Drivetrain gear ratio.
      * @param wheelRadiusInches The radius of the drivetrain wheels in inches.
      * @return A neo encoder linear distance conversion factor to be used as a conversion factor in neo encoders.
-     * @implNote THIS IS IN METERS!
      */
-    public static double linearDistanceConversionFactor(double gearRatio, double wheelRadiusInches) {
+    public static double neoEncoderLinearDistanceConversionFactorMeters(double gearRatio, double wheelRadiusInches) {
         return Units.inchesToMeters(1 / (gearRatio * 2 * Math.PI * Units.inchesToMeters(wheelRadiusInches) * 10));
     }
 }
