@@ -3,7 +3,7 @@ package lib;
 /**
  * A utility class housing some useful algorithms for working with encoders.
  */
-public class Encoderutil {
+public final class Encoderutil {
     /** 
      * Takes a REV internal encoder position and converts it to feet.
      * @param encoderPosition rev internal encoder position.
