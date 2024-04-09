@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * and any useful Smartdashboard utility.
  * @see DashboardConfiguration
  */
+@Deprecated
 public final class DashboardManager {
     /**
      * List of subsystems that implement this interface to configure dashboards for.

@@ -5,6 +5,7 @@ import edu.wpi.first.math.util.Units;
 /**
  * A utility class housing some useful algorithms for working with encoders.
  */
+@Deprecated
 public final class Encoderutil {
     /** 
      * Takes a REV internal encoder position and converts it to feet.
@@ -13,6 +14,7 @@ public final class Encoderutil {
      * @param wheelDiameter diameter of driveTrain wheels.
      * @return encoder position converted to feet.
      */
+    @Deprecated
     public static double neoEncoderTicks2Feet(double encoderPosition, double gearRatio, double wheelDiameter) {
         // calculated 71.4 from
         // 1 wheel rotation = 5.95 gear rotations
@@ -28,6 +30,7 @@ public final class Encoderutil {
      * @param wheelDiameter diameter of driveTrain wheels.
      * @return encoder position converted to inches.
      */
+    @Deprecated
     public static double neoEncoderTicks2Inches(double encoderPosition, double gearRatio, double wheelDiameter) {
         return encoderPosition * ((wheelDiameter*Math.PI)/gearRatio);
     }
@@ -39,6 +42,7 @@ public final class Encoderutil {
      * @param wheelRadiusInches The radius of the drivetrain wheels in inches.
      * @return A neo encoder linear distance conversion factor to be used as a conversion factor in neo encoders.
      */
+    @Deprecated
     public static double neoEncoderLinearDistanceConversionFactorMeters(double gearRatio, double wheelRadiusInches) {
         return Units.inchesToMeters(1 / (gearRatio * 2 * Math.PI * Units.inchesToMeters(wheelRadiusInches) * 10));
     }

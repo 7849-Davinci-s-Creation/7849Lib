@@ -5,6 +5,7 @@ package lib;
  * This interface should be implemented if you want to configure a subsystem's
  * SmartDashboard with a consistent method across classes on launch.
  */
+@Deprecated
 @FunctionalInterface
 public interface DashboardConfiguration {
      /**
