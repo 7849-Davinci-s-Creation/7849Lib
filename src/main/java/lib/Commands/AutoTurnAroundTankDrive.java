@@ -1,40 +1,48 @@
 package lib.Commands;
 
+import java.util.function.Supplier;
+
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
-import lib.Drivetrains.DifferentialDrive;
+import lib.FunctionalInterfaces.ArcadeDrive;
+import lib.FunctionalInterfaces.VoidMethod;
 
 public class AutoTurnAroundTankDrive extends Command {
 
-    private final PIDController pid;
-    private final DifferentialDrive drive;
+  private final PIDController pid;
+  private final VoidMethod zeroHeading;
+  private final ArcadeDrive driving;
+  private final Supplier<Double> getHeading;
 
-   
-    public AutoTurnAroundTankDrive(DifferentialDrive drive,double P, double I, double D ) {
-        this.drive = drive;
-        this.pid = new PIDController(P, I, D);
-        addRequirements();
-    }
+  public AutoTurnAroundTankDrive(VoidMethod zeroHeading, ArcadeDrive driving, Supplier<Double> getHeading, double P,
+      double I, double D) {
+    this.pid = new PIDController(P, I, D);
+    this.zeroHeading = zeroHeading;
+    this.driving = driving;
+    this.getHeading = getHeading;
+    addRequirements();
+  }
 
-    @Override
-    public void initialize() {
-        
-    }
+  @Override
+  public void initialize() {
+    zeroHeading.run();
 
-    @Override
-    public void execute() {
-        
-    }
+  }
 
-    @Override
-    public void end(boolean interuppted) {
-   
-    }
+  @Override
+  public void execute() {
+    driving.arcadeDrive(pid.calculate(getHeading.get(), 180), 0);
 
-    @Override
-    public boolean isFinished() {
-      return false;
-    }
+  }
 
+  @Override
+  public void end(boolean interuppted) {
+    driving.arcadeDrive(0, 0);
+  }
+
+  @Override
+  public boolean isFinished() {
+    return getHeading.get() >= 180;
+  }
 
 }
