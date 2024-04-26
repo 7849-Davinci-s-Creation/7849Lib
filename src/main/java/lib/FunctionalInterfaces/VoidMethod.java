@@ -1,4 +1,4 @@
-package lib;
+package lib.FunctionalInterfaces;
 
 /**
  * A functional interface representation of a parameterless void method.
