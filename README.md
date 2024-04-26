@@ -9,10 +9,13 @@ https://jitpack.io/#7849-Davinci-s-Creation/7849Lib
 
 # Install with gradle
 ```
-repositories {
-    mavenCentral()
-    maven { url 'https://jitpack.io' }
-}
+dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 ```
 dependencies {
