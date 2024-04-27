@@ -20,7 +20,7 @@ public class AutoTurnAroundTankDrive extends Command {
 
   /**
    * Creates an instance of Autonomous turn around Command.
-   * @param zeroHeading Method of resting the Robot's heading.
+   * @param zeroHeading Method of resetting the Robot's heading.
    * @param driving Method of driving the Robot.
    * @param getHeading Method of retrieving the current heading of the Robot.
    * @param P Command's Proportional term.
