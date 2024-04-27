@@ -25,6 +25,11 @@ public class Bounds {
         return lowerBound;
     }
 
+    /**
+     * Checks if a passed value is within the object's defined range.
+     * @param value Wanted value to check.
+     * @return True if in range.
+     */
     public boolean isInBounds(double value) {
         return value >= lowerBound && value <= higherBound;
     }
