@@ -9,6 +9,10 @@ import org.opencv.imgproc.Imgproc;
 import java.util.Arrays;
 import java.util.HashMap;
 
+/**
+ * A utility Object for the WPILib CameraServer
+ * @see CameraServer
+ */
 public final class CameraServerManager {
     private final Camera[] cameras;
     private final CvSink[] cvSinks;
@@ -17,6 +21,10 @@ public final class CameraServerManager {
 
     private final HashMap<String, CvSource> outputStreams = new HashMap<>();
 
+    /**
+     * Create a new CameraServerManager Objects
+     * @param cameras Cameras to have utilized the WPILib Camera server.
+     */
     public CameraServerManager(Camera... cameras) {
         this.cameras = cameras;
         int numOfCameras = cameras.length;
@@ -36,6 +44,10 @@ public final class CameraServerManager {
         }
     }
 
+    /**
+     * Starts streaming all provided cameras to the CameraServer
+     * @see CameraServer
+     */
     public void startCameras() {
         new Thread(() -> {
             while (!Thread.interrupted()) {
