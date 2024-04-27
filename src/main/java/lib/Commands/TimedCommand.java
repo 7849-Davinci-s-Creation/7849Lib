@@ -14,7 +14,7 @@ public abstract class TimedCommand extends Command {
 
     public abstract void init();
     public abstract void exec();
-    public abstract void finished();
+    public abstract void end();
 
     @Override
     public void initialize() {
@@ -29,7 +29,7 @@ public abstract class TimedCommand extends Command {
 
     @Override
     public void end(boolean interuppted) {
-        this.finished();
+        this.end();
     }
 
     @Override
