@@ -1,4 +1,4 @@
-package lib.Commands;
+package lib.Commands.DifferentialDrive;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -9,7 +9,7 @@ import lib.FunctionalInterfaces.VoidMethod;
 import java.util.function.Supplier;
 
 /**
- * A command that autonomously turns a differential rive robot
+ * A command that autonomously turns a differential rive robot 180 degrees.
  */
 public class AutoTurnAroundTankDrive extends Command {
 
