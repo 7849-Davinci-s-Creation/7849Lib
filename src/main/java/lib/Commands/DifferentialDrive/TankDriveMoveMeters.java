@@ -25,7 +25,7 @@ public class TankDriveMoveMeters extends Command {
 
     /**
      * Creates an Autonomous MoveMeters command for a Differential Drive robot.
-     * @implNote This Command is assuming the robot's encoder conversion method is in meters.
+     * (This Command is assuming the robot's encoder conversion method is in meters.)
      * @param driving Method of driving the robot.
      * @param zeroEncoders Method of zeroing robot's encoders.
      * @param zeroHeading Method of zeroing robot's heading.

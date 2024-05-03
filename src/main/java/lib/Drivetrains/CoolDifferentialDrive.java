@@ -52,7 +52,7 @@ public class CoolDifferentialDrive {
 
     /**
      * Applies a polynomial curve to the ramping speed of a robot's drivetrain.
-     * @implNote This method is designed to be used within a loop with a varying position input.
+     * (This method is designed to be used within a loop with a varying position input.)
      * @param position Current position of joystick or feed forward controller.
      * @param torqueResistanceThreshold Value to overcome carpet resistance with.
      * @param exponent Polynomial curve rate.
