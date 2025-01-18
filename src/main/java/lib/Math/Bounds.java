@@ -8,7 +8,7 @@ public class Bounds {
     private final double higherBound;
 
     /**
-     * Creates a bound representing values between lower <------> higher bounds.
+     * Creates a bound representing values between lower to higher bounds.
      * @param lowerBound Lower bound.
      * @param higherBound Higher bound.
      */
