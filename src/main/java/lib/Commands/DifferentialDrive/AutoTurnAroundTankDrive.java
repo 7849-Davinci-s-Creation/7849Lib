@@ -9,7 +9,7 @@ import lib.FunctionalInterfaces.VoidMethod;
 import java.util.function.Supplier;
 
 /**
- * A command that autonomously turns a differential rive robot 180 degrees.
+ * A command that autonomously turns a differential rive robot
  */
 public class AutoTurnAroundTankDrive extends Command {
 
@@ -20,7 +20,7 @@ public class AutoTurnAroundTankDrive extends Command {
 
   /**
    * Creates an instance of Autonomous turn around Command.
-   * @param zeroHeading Method of resetting the Robot's heading.
+   * @param zeroHeading Method of resting the Robot's heading.
    * @param driving Method of driving the Robot.
    * @param getHeading Method of retrieving the current heading of the Robot.
    * @param P Command's Proportional term.
@@ -45,11 +45,13 @@ public class AutoTurnAroundTankDrive extends Command {
 
   @Override
   public void execute() {
+
+    // turn around fully (180 degrees)
     driving.differentialDrive(pid.calculate(getHeading.get(), 180), 0);
   }
 
   @Override
-  public void end(boolean interuppted) {
+  public void end(boolean interrupted) {
     driving.differentialDrive(0, 0);
   }
 

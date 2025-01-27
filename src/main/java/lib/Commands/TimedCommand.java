@@ -52,7 +52,7 @@ public abstract class TimedCommand extends Command {
     }
 
     @Override
-    public void end(boolean interuppted) {
+    public void end(boolean interrupted) {
         this.end();
     }
 
