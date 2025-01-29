@@ -4,25 +4,25 @@ import com.ctre.phoenix6.swerve.SwerveDrivetrain.SwerveDriveState;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.networktables.DoubleArrayPublisher;
-import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.StructArrayPublisher;
 
 import java.util.function.Supplier;
 
 /**
  * Useful attributes and methods for logging data via NetworkTables.
- * @see NetworkTable
+ * @see NetworkTableInstance
  */
 public final class LoggingHelper {
     /** NetworkTable to be logging to. */
-    private final NetworkTable table;
+    private final NetworkTableInstance table;
 
     /**
      * Creates an instance of the LoggingHelper Object.
      * @param table NetworkTable to be logging to.
-     * @see NetworkTable
+     * @see NetworkTableInstance
      */
-    public LoggingHelper(NetworkTable table) {
+    public LoggingHelper(NetworkTableInstance table) {
         this.table = table;
     }
 
@@ -33,7 +33,7 @@ public final class LoggingHelper {
      * @see Pose2d
      */
     public void logPose(Supplier<Pose2d> poseSupplier, String name) {
-        DoubleArrayPublisher loggedPose = table.getDoubleArrayTopic("name").publish();
+        DoubleArrayPublisher loggedPose = table.getDoubleArrayTopic(name).publish();
 
         Pose2d pose = poseSupplier.get();
 
