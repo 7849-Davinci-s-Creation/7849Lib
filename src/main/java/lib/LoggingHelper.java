@@ -18,8 +18,10 @@ public final class LoggingHelper {
     /** NetworkTable to be logging to. */
     private final NetworkTableInstance table;
 
+    /** Swerve module states publisher. */
     private final StructArrayPublisher<SwerveModuleState> swerveStates;
 
+    /** States of modules. */
     private final SwerveModuleState[] states = new SwerveModuleState[] {
             new SwerveModuleState(),
             new SwerveModuleState(),
